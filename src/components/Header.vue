@@ -1,13 +1,13 @@
 <template>
   <div class="container">
     <nav class="navbar navbar-light bg-light">
-      <a class="navbar-brand">Cart</a>
+      <router-link to="/" class="navbar-brand">Cart</router-link>
       <div class="nav-item">
         <span class="navbar-text my-2 mx-2">Your balance: ${{ funds }}</span>
-        <button class="btn btn-outline-success my-2 mx-2">Top Up</button>
+        <router-link to="topup" class="btn btn-outline-success my-2 mx-2">Top Up</router-link>
       </div>
-      <a class="nav-link" href="#">Login</a>
-      <a class="nav-link" href="#">Logout</a>
+      <router-link class="nav-link" to="/login">Login</router-link>
+      <router-link class="nav-link" to="/">Logout</router-link>
     </nav>
   </div>
 </nav>
