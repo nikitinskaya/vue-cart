@@ -5,7 +5,7 @@
         <label for="amount" class="col-form-label">Amount</label>
         <input type="number" class="form-control" id="amount">
       </div>
-      <button type="submit" class="btn btn-primary">Add to balance</button>
+      <button type="submit" class="btn btn-info">Add to balance</button>
     </form>
   </div>
 </template>
