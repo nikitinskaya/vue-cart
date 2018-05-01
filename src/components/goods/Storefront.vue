@@ -1,6 +1,6 @@
 <template>
   <div class="row">
-    <app-good v-for="good in goods"></app-good>
+    <app-good v-for="good in goods" :good="good"></app-good>
   </div>
 </template>
 
