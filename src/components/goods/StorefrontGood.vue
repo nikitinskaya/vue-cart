@@ -23,9 +23,10 @@
       order() {
         const order = {
           goodId: this.good.id,
-          goodPrice: this.good.price
+          goodPrice: this.good.price,
+          quantity: 1
         };
-        console.log(order);
+        this.$store.dispatch('orderGood', order)
       }
     }
   }
