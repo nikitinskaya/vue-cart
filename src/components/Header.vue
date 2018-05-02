@@ -12,9 +12,9 @@
 
 <script>
   export default {
-    data: function() {
-      return {
-        funds: 100
+    computed: {
+      funds() {
+        return this.$store.getters.funds;
       }
     }
   }
