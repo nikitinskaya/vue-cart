@@ -4,7 +4,7 @@
       <h3 class="card-title">
         {{ good.name }}
       </h3>
-      <p class="text-muted">${{ good.price * good.quantity }} ({{ good.quantity }} pcs.)</p>
+      <p class="text-muted">{{ good.price * good.quantity | currency }} ({{ good.quantity }} pcs.)</p>
     </div>
   </div>
 </template>

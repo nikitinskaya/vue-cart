@@ -5,9 +5,7 @@
       <h3 class="card-title">
         {{ good.name }}
       </h3>
-      <p class="card-text">
-        ${{ good.price }}
-      </p>
+      <p class="card-text">{{ +good.price | currency }}</p>
       <button href="#"
               class="btn btn-info"
               @click="order"
