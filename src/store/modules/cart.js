@@ -1,5 +1,5 @@
 const state = {
-  funds: 10000,
+  funds: 0,
   goods: []
 };
 
@@ -15,6 +15,9 @@ const mutations = {
       });
     }
     state.funds -= goodPrice * quantity;
+  },
+  'TOP_UP_FUNDS'(state, payload) {
+    state.funds += payload.amount;
   }
 };
 
