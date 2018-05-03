@@ -1,8 +1,10 @@
 <template>
   <div class="row">
-    <div class="card w-100 px-5 border-white">
+    <div class="card w-100 px-5 border-white"
+         ondragover="event.preventDefault()"
+         >
       <div class="w-75 mx-auto pt-5">
-        <img class="card-img" src="../../assets/shopping-bag.svg" alt="Card image">
+        <img class="card-img" src="/static/shopping-bag.svg" alt="Card image">
       </div>
       <div class="card-img-overlay">
         <app-good v-for="good in cartGoods" :good="good" :key="good.id"></app-good>
@@ -24,4 +26,5 @@
       appGood: Good
     }
   }
+
 </script>
