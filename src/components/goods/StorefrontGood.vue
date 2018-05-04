@@ -3,7 +3,9 @@
     <div class="card border-info text-info p-4"
          :class="[{'border-danger': !isEnoughFunds}, {'text-muted': !isEnoughFunds}]"
          :draggable="isEnoughFunds"
-         @dragend="order">
+         :id="good.id"
+         @dragstart="start"
+         >
 
       <h3 class="card-title">
         {{ good.name }}
@@ -25,13 +27,8 @@
       }
     },
     methods: {
-      order() {
-        const order = {
-          goodId: this.good.id,
-          goodPrice: this.good.price,
-          quantity: 1
-        };
-        this.$store.dispatch('orderGood', order);
+      start() {
+        event.dataTransfer.setData("Number", event.target.id);
       }
     }
   }
