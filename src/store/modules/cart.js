@@ -17,6 +17,13 @@ const mutations = {
     const goodPrice = getters.goods.find(el => el.id == order.goodId).price;
     state.funds -= goodPrice;
   },
+  'DELETE_GOOD'(state, {id, getters}) {
+    const record = state.cartGoods.find(el => el.id == id);
+    const goodPrice = getters.goods.find(el => el.id == id).price;
+    const goodIndex = state.cartGoods.findIndex(el => el.id == id);
+    state.funds += goodPrice * record.quantity;
+    state.cartGoods.splice(goodIndex, 1);
+  },
   'TOP_UP_FUNDS'(state, payload) {
     state.funds += payload.amount;
   }
@@ -25,6 +32,9 @@ const mutations = {
 const actions = {
   orderGood: ({ commit, getters }, order) => {
     commit('BUY_GOOD', { order, getters });
+  },
+  deleteGood: ({commit, getters}, id) => {
+    commit('DELETE_GOOD', {id, getters});
   }
 };
 
